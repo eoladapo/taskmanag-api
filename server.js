@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://localhost:5173/',
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   })
 );
@@ -28,6 +28,6 @@ app.get('/', (req, res) => {
 
 export default app;
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server is running on post ${process.env.PORT}...`);
-});
+// app.listen(process.env.PORT, () => {
+//   console.log(`Server is running on post ${process.env.PORT}...`);
+// });
