@@ -18,8 +18,6 @@ app.use(
   })
 );
 
-// Handle preflight
-app.options('*', cors());
 app.use(express.json());
 
 connectDB();
@@ -31,8 +29,8 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Task Management API');
 });
 
-export default app;
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on post ${process.env.PORT}...`);
+});
 
-// app.listen(process.env.PORT, () => {
-//   console.log(`Server is running on post ${process.env.PORT}...`);
-// });
+export default app;
